@@ -1,0 +1,124 @@
+
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<div id="Background"></div>
+<body id="body">
+    <div id="ContentWrapper">
+        <img id="frontpageImg"src="Your Wallet Blance (1).png">
+        <p id="slogan">Intelligent Finance, Powered by AI.</p>
+        <p id="slogan2">Discover how QuantumFi optimizes your finances with AI-driven insights.</p>
+        <h1 id="Intelligent">Your <span class="smart-word">Smart</span> Financial <br> Partner on Solana</h1>
+        <h1 id="Works">How <span class="smart-word">QuantumFi Works:</span><br> AI-Powered Financial Growth</h1>
+        <p id="des">Take control of your wealth with QuantumFi, the AI-powered finance platform built on Solana.<br> Seamlessly manage, invest, and grow your assets with real-time insights,<br> personalized strategies, and cutting-edge blockchain technology — all in one secure place.</p>
+        <p id="des2">QuantumFi uses AI to help you manage and grow your wealth.<br> Analyze income, spending, and assets for personalized recommendations.<br> Track progress and optimize your finances for continuous growth.</p>
+        <img id="downloadAppstore"src="Group-427319483-1.png">
+       <img  id="downloadPlayStore"src="Play.png">
+        <!--<img id="Vignette"src="Vignette-PNG-Free-Image.png">-->
+        <img id="logo" src="qUantum__1_-removebg-preview.png">
+
+        <h1 id="HomePageTitle">QuantumFi</h1>
+        <div id="downloadBTN">Download The App</div>
+        <h1 id="How">How <span class="smart-word" >QuantumFi</span> Works</h1>
+        <a href="https://dexscreener.com/" id="Buy">Buy Now</a>
+        <a href="https://t.me/QuantumFi_SOL"><img src="telegram.png" id="telegramLogo"></a>
+        <a href="https://dexscreener.com"> <img src="dex-screener-logo-png_seeklogo-527276-removebg-preview.png" id="Dexlogo"></a>
+        <a href="https://x.com/QuantumFi_SOL"> <img src="X_logo_2023_(white).png" id="Xlogo"></a>
+
+    <div id="FloatingBoxes">
+        <div id="Box1">Set Disbursement Instructions <br> <br><span  id="box1Small">Easily link your bank accounts, cards, and investment portfolios securely in minutes.</span><br> <br> 01</div>
+        <div id="Box2">AI Analyzes Your Finances <br> <br><span  id="box1Small">Our smart AI reviews your income, spending, and assets to generate powerful insights.</span><br> <br> 02</div>
+        <div id="Box3">Track & Optimize <br> <br><span  id="box1Small">Monitor your financial progress, adjust your plans, and let QuantumFi continuously optimize your wealth for long-term success.</span><br> <br> 03</div>
+    </div>
+    </div>
+</body>
+<script>
+    document.getElementById('How').addEventListener('click', function() {
+        // Slide out the frontpage image and "How" text
+        document.getElementById('frontpageImg').classList.add('slide-out'); // Slide out frontpage image
+        document.getElementById('How').classList.add('slide-out'); // Slide out How text
+
+        // After the slide-out animation completes (0.5s), show the "Buy" text
+        setTimeout(function() {
+            // Show "Buy" text and trigger its slide-in effect
+            document.getElementById('Buy').style.display = 'block'; // Make Buy visible
+            document.getElementById('Buy').classList.add('slide-in'); // Trigger slide-in transition
+
+            // Show and fade in the floating boxes
+            document.getElementById('FloatingBoxes').classList.add('visible'); // Trigger fade-in for boxes
+        }, 500); // Delay matches the duration of the "slide-out" transition (0.5s)
+
+        // Slogan fade-out and fade-in effect
+        const telegramLogo = document.getElementById("telegramLogo");
+        const downloadPlayStore = document.getElementById("downloadPlayStore");
+        const Dexlogo = document.getElementById("Dexlogo");
+        const downloadAppstore = document.getElementById("downloadAppstore");
+        const Xlogo = document.getElementById("Xlogo");
+        const des = document.getElementById("des");
+        const des2 = document.getElementById("des2");
+        const slogan = document.getElementById("slogan");
+        const slogan2 = document.getElementById("slogan2");
+        const Intelligent = document.getElementById("Intelligent");
+        const Works = document.getElementById("Works");
+        telegramLogo.style.display = "none";
+        Xlogo.style.display = "none"; 
+        Dexlogo.style.display = "none";// Show slogan2
+        downloadPlayStore.style.opacity = "0"; // Fade out slogan
+        downloadPlayStore.style.transition = "opacity 0.5s ease-in-out";
+        downloadAppstore.style.opacity = "0"; // Fade out slogan
+        downloadAppstore.style.transition = "opacity 0.5s ease-in-out";
+        des.style.opacity = "0"; // Fade out slogan
+        des.style.transition = "opacity 0.5s ease-in-out";
+        slogan.style.opacity = "0"; // Fade out slogan
+        slogan.style.transition = "opacity 0.5s ease-in-out";
+        Intelligent.style.opacity = "0"; // Fade out slogan
+        Intelligent.style.transition = "opacity 0.5s ease-in-out";
+        setTimeout(() => {
+            downloadPlayStore.style.display = "none"; // Hide after fade-out
+            Dexlogo.style.display = "block"; // Show slogan2
+            Dexlogo.style.opacity = "0"; // Start from invisible
+            telegramLogo.style.display = "block"; // Show slogan2
+            telegramLogo.style.opacity = "0"; // Start from invisible
+            
+            downloadAppstore.style.display = "none"; // Hide after fade-out
+            Xlogo.style.display = "block"; // Show slogan2
+            Xlogo.style.opacity = "0"; // Start from invisible
+            des.style.display = "none"; // Hide after fade-out
+            des2.style.display = "block"; // Show slogan2
+            des2.style.opacity = "0"; // Start from invisible
+            slogan.style.display = "none"; // Hide after fade-out
+            slogan2.style.display = "block"; // Show slogan2
+            slogan2.style.opacity = "0"; // Start from invisible
+            Intelligent.style.display = "none"; // Hide after fade-out
+            Works.style.display = "block"; // Show slogan2
+            Works.style.opacity = "0"; // Start from invisible
+            setTimeout(() => {
+                telegramLogo.style.opacity = "1"; // Fade in slogan2
+                telegramLogo.style.transition = "opacity 0.5s ease-in-out";
+                Dexlogo.style.opacity = "1"; // Fade in slogan2
+                Dexlogo.style.transition = "opacity 0.5s ease-in-out";
+                Xlogo.style.opacity = "1"; // Fade in slogan2
+                Xlogo.style.transition = "opacity 0.5s ease-in-out";
+                des2.style.opacity = "1"; // Fade in slogan2
+                des2.style.transition = "opacity 0.5s ease-in-out";
+                slogan2.style.opacity = "1"; // Fade in slogan2
+                slogan2.style.transition = "opacity 0.5s ease-in-out";
+                Works.style.opacity = "1"; // Fade in slogan2
+                Works.style.transition = "opacity 0.5s ease-in-out";
+            }, 50);
+        }, 500); // Wait for fade-out to complete
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+

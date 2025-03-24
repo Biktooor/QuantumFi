@@ -1,0 +1,478 @@
+html, body {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;  /* Allow full height for scrolling */
+    overflow-x: hidden;  /* Disable horizontal scrolling */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+#Background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0F131D;
+    width: 100vw;
+    height: 150vh;
+    z-index: -1;
+}
+
+#ContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;  /* Add padding if needed */
+    min-height: 100vh;
+    box-sizing: border-box; /* Prevent padding from affecting height */
+}
+
+#logo {
+    position: absolute;
+    margin-left: -115vh;
+    margin-top: -90vh;
+    width: 5vh;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition: 0.2s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+#frontpageImg.slide-out {
+    transform: translateX(-100%); /* Slide the logo out to the left */
+    opacity: 0; /* Fade out */
+}
+
+/* Slide-in effect for Logo (if needed) */
+#frontpageImg.slide-in {
+    opacity: 1;
+    transform: translateX(0); /* Reset logo to original position */
+}
+#logo:hover {
+    width: 5.5vh;
+}
+#HomePageTitle {
+    font-family: Poppins, sans-serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px;
+    margin-left: -89vh;
+    margin-top: -90vh;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+    position: absolute;
+}
+#downloadBTN {
+    position: absolute;
+    color: white;
+    font-family: poppins;
+    font-size: 1rem;
+    border: white 0.1vh solid;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    width: 20vh;
+    border-radius: 5vh;
+    margin-left: 90vh;
+    margin-top: -90vh;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+}
+#downloadBTN:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+#Vignette {
+    position: absolute;
+    opacity: 20%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+#frontpageImg {
+    position: absolute;
+    width: 70vh;
+    margin-left: -90vh;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* This ensures smooth transition for both sliding and fading */
+}
+
+/* Disable subtleFloat animation when sliding out */
+#frontpageImg.no-float {
+    animation: none; /* Disable floating animation */
+}
+
+/* Slide-out effect for frontpage image (to the left) */
+#frontpageImg.slide-out {
+    transform: translateX(0); /* Slide the frontpage image out to the left */
+    opacity: 0; /* Fade out */
+}
+
+/* Keep the floating animation active when the image is not being transitioned */
+#frontpageImg:not(.slide-out) {
+    animation: subtleFloat 10s ease-in-out infinite; /* Re-enable the floating animation */
+}
+.smart-word {
+    color: rgb(98, 98, 255);
+}
+
+#Box1 {
+    position: absolute;
+    margin-left: -60vh;
+    margin-top: -32vh;
+    background: linear-gradient(135deg, #4c6ef5, #7a3af2); /* Blue to Purple gradient */
+    width: 25vh;
+    height: 20vh;
+    z-index: 3;
+    border-radius: 1vh;
+    animation: subtleFloat 10s ease-in-out infinite;
+    color: white;
+    font-family: Poppins, sans-serif;
+    padding: 2vh;
+    font-size: 2vh;
+    text-align: left;
+    font-weight: 600;
+}
+#Box2{
+    position: absolute;
+    margin-left: -50vh;
+    margin-top: -5vh;
+    background: linear-gradient(135deg, #4c6ef5, #7a3af2); /* Blue to Purple gradient */
+    width: 25vh;
+    height: 20vh;
+    z-index: 3;
+    border-radius: 1vh;
+    animation: subtleFloat 10s ease-in-out infinite;
+    color: white;
+    font-family: Poppins, sans-serif;
+    padding: 2vh;
+    font-size: 2vh;
+    text-align: left;
+    font-weight: 600;
+}
+#Box3{
+    position: absolute;
+    margin-left: -60vh;
+    margin-top: 22vh;
+    background: linear-gradient(135deg, #4c6ef5, #7a3af2); /* Blue to Purple gradient */
+    width: 25vh;
+    height: 21.5vh;
+    z-index: 3;
+    border-radius: 1vh;
+    animation: subtleFloat 10s ease-in-out infinite;
+    color: white;
+    font-family: Poppins, sans-serif;
+    padding: 2vh;
+    font-size: 2vh;
+    text-align: left;
+    font-weight: 600;
+}
+#box1Small{
+   
+    font-size: 1.5vh;
+}
+#FloatingBoxes {
+    visibility: hidden; /* Keep it hidden but still take up space */
+    opacity: 0; /* Fully transparent */
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    margin-top: -10vh;
+    cursor: pointer;
+}
+
+#FloatingBoxes.visible {
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Fade in smoothly */
+}
+
+/* Ensure individual boxes also fade in */
+#Box1, #Box2, #Box3 {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:  0.2s ease-in-out, transform 1s ease-in-out;
+}
+
+#FloatingBoxes.visible #Box1, 
+#FloatingBoxes.visible #Box2,
+#FloatingBoxes.visible #Box3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes subtleFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(1vh, -0.5vh);
+    }
+    50% {
+        transform: translate(0, 1vh);
+    }
+    75% {
+        transform: translate(-1vh, 0.5vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#Intelligent {
+    opacity: 1;
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 30vh;
+    font-size: 6vh;
+    text-align: left;
+    margin-top: -30vh;
+    transition: opacity 0.5s ease-in-out
+}
+#Works{
+    opacity: 0;
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 56vh;
+    font-size: 6vh;
+    text-align: left;
+    margin-top: -30vh;
+    transition: opacity 0.5s ease-in-out
+}
+#slogan {
+    opacity: 1;
+    color: white;
+    font-family: poppins;
+    font-weight: 400;
+    position: absolute;
+    margin-left: -0.5vh;
+    font-size: 2vh;
+    text-align: left;
+    margin-top: -55vh;
+    transition: opacity 0.5s ease-in-out
+}
+#slogan2{
+    opacity: 0;
+    color: white;
+    font-family: poppins;
+    font-weight: 400;
+    position: absolute;
+    margin-left: 38vh;
+    font-size: 2vh;
+    text-align: left;
+    margin-top: -55vh;
+    transition: opacity 0.5s ease-in-out
+}
+#des {
+    opacity: 1;
+    color: white;
+    font-family: poppins;
+    font-weight: 400;
+    position: absolute;
+    margin-left: 40vh;
+    font-size: 1.6vh;
+    text-align: left;
+    margin-top: 0vh;
+    text-align: left;
+    transition: opacity 0.5s ease-in-out
+}
+#des2{
+    opacity: 0;
+    color: white;
+    font-family: poppins;
+    font-weight: 400;
+    position: absolute;
+    margin-left: 25.5vh;
+    font-size: 1.6vh;
+    text-align: left;
+    margin-top: 0vh;
+    text-align: left;
+    text-align: left;
+    transition: opacity 0.5s ease-in-out
+}
+#downloadAppstore, #downloadPlayStore {
+    opacity: 1;
+    position: absolute;
+    margin-top: 30vh;
+    cursor: pointer;
+    padding: 0px 0px;
+    border: 2px solid transparent;
+    border-radius: 1vh;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease-in-out;
+    
+}
+
+#downloadAppstore {
+    margin-left: -12.5vh;
+}
+
+#downloadPlayStore {
+    margin-left: 40vh;
+}
+
+#downloadAppstore:hover, #downloadPlayStore:hover, #Box1:hover, #Box2:hover, #Box3:hover {
+    
+    border-color: #4a34c5;
+    box-shadow: 0 0 4px 1px rgba(104, 70, 253, 0.7), 0 0 8px 2px rgba(125, 89, 255, 0.5);
+}
+
+#Xlogo{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    margin-top: 7.5vh;
+    width: 5vh;
+    margin-left: -17vh;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out, margin-left 0.5s ease-in-out ;
+}
+
+#Dexlogo{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    margin-top: 7.7vh;
+    width: 5vh;
+    margin-left: -2vh;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+#telegramLogo{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    margin-top: 7.5vh;
+    width: 5vh;
+    margin-left: 15vh;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+/* Styles for the #How element */
+#How {
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    position: absolute;
+    font-size: 3vh;
+    text-align: left;
+    margin-top: 55vh;
+    margin-left: 5vh;
+    cursor: pointer;
+    transition: 0.3s ease-in-out; /* Hover transition */
+}
+
+#How:hover {
+    font-size: 3vh;
+    margin-left: 8vh;
+}
+
+#How::after {
+    content: '→'; /* Right arrow */
+    font-size: 3vh; /* Arrow size */
+    margin-left: 10px; /* Space between text and arrow */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+#How:hover::after {
+    opacity: 1; /* Show the arrow when hovered */
+}
+
+/* Initial styles for Buy text (hidden and off-screen) */
+#Buy {
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    position: absolute;
+    font-size: 3vh;
+    text-align: left;
+    margin-top: 55vh;
+    margin-left: -17vh; /* Positioned off-screen initially */
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Initially off-screen */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transition for sliding in */
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+/* Slide-out effect for How */
+#How.slide-out {
+    transform: translateX(100%); /* Slide How out to the left */
+    opacity: 0; /* Fade out */
+}
+
+/* Slide-in effect for Buy */
+#Buy.slide-in {
+    opacity: 1; /* Make Buy visible */
+    transform: translateX(0); /* Slide Buy in from the right */
+}
+
+#Buy:hover {
+    font-size: 3vh;
+    margin-left: -14vh; /* Slightly move to the left for hover effect */
+}
+
+#Buy::after {
+    content: '→'; /* Right arrow */
+    font-size: 3vh; /* Arrow size */
+    margin-left: 10px; /* Space between text and arrow */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+#Buy:hover::after {
+    opacity: 1; /* Show the arrow when hovered */
+}
+
+
+/* Slide-in animation */
+#slideIn {
+    position: absolute;
+    top: 0;
+    right: -100vw; /* Start off-screen */
+    width: 100vw;
+    height: 100vh;
+    background-color: #0F131D; /* Background color */
+    z-index: 999;
+    transition: right 1s ease-in-out; /* Slide effect */
+}
+
+/* When the animation is triggered (after click) */
+.slide-in-active {
+    right: 0; /* Move content to the right edge of the screen */
+}
+/* Apply fade-out effect for the body when transitioning */
+/* Apply fade-out effect for the body when transitioning */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth fade-out */
+}
+
+/* Apply fade-in effect on the next page */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth fade-in */
+}
+
+body {
+    transition: opacity 1s ease-in-out; /* Ensure smooth transition for the body */
+}
+
+
+
