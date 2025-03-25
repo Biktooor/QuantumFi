@@ -17,9 +17,16 @@
         <img id="downloadAppstore"src="Group-427319483-1.png">
        <img  id="downloadPlayStore"src="Play.png">
         <!--<img id="Vignette"src="Vignette-PNG-Free-Image.png">-->
-        <img id="logo" src="qUantum__1_-removebg-preview.png">
+        <img id="logo" src="qUantum__2_-removebg-preview.png">
 
-        <h1 id="HomePageTitle">QuantumFi</h1>
+        <a id="HomePageTitle" href="#">QuantumFi</a>
+
+        <script>
+          document.getElementById("HomePageTitle").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevents default link behavior
+            location.reload(); // Refreshes the page
+          });
+        </script>
         <div id="downloadBTN">Download The App</div>
         <h1 id="How">How <span class="smart-word" >QuantumFi</span> Works</h1>
         <a href="https://dexscreener.com/" id="Buy">Buy Now</a>
